@@ -1,16 +1,27 @@
 ### Activate your host
 
+```bash
 python -m secupy activate --token xxxxxx --label boilerplate
+```
 
 ### Build your source code
 
-python -m secupy build -s .\src\ -d .\protected_src\ -v --exclude **\__pycache__
+```bash
+python -m secupy build -s .\src\ -d .\protected_src\ --exclude manage.py --copy manage.py
+```
 
 ### Execute protected code
 
 > Go to protected_src folder and execute:
 
-secupy -m manage runserver 0.0.0.0:8000 or python -m secupy -m manage runserver 0.0.0.0:8000
+```bash
+secupy -m manage runserver 0.0.0.0:8000
+```
+
+or 
+```bash
+python -m manage runserver 0.0.0.0:8000
+```
 
 ### Test yout first protected Django app
 
