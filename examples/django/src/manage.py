@@ -3,8 +3,8 @@
 import os
 import sys
 
+# Allow Django to execute Secupy-ed code
 import secupy
-
 
 def main():
     """Run administrative tasks."""
