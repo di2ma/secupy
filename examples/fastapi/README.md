@@ -7,7 +7,7 @@ python -m secupy activate --token xxxxxx --label boilerplate
 ### Build your source code
 
 ```bash
-python -m secupy build -s src -d protected_src 
+python -m secupy build -s src -d protected_src -u entrypoint.py
 ```
 
 ### Execute protected code
@@ -15,7 +15,7 @@ python -m secupy build -s src -d protected_src
 > Go to protected_src folder and execute:
 
 ```bash
-uvicorn fastapi_boilerplate:app
+uvicorn entrypoint:app
 ```
 
 ### Test yout first protected Fastapi app
