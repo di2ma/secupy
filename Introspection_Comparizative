@@ -1,0 +1,78 @@
+### Clear Version ###
+> python3 run_app.py 
+
+app 0.0.1
+app.bar
+app.bar.tok
+__name__ app.bar
+foo Hello world! timestamp=1658580068.735196
+hello from foo 1658580068.7351959
+bar Hello world! timestamp=1658580068.735832
+hello from bar None
+SecupyFinder(/Users/carminedibiase/devel/secupy-core/tests/sources/app/bar) __init__ False
+SecupyFinder(/Users/carminedibiase/devel/secupy-core/tests/sources/app/bar) bar False
+SecupyFinder(/Users/carminedibiase/devel/secupy-core/tests/sources/app/bar) __main__ False
+SecupyFinder(/Users/carminedibiase/devel/secupy-core/tests/sources/app/bar) tok True
+__main__ 0.0.1
+Hello from tok!
+Name:              tok_say_hello
+Filename:          <string>
+Argument count:    0
+Positional-only arguments: 0
+Kw-only arguments: 0
+Number of locals:  0
+Stack size:        2
+Flags:             OPTIMIZED, NEWLOCALS, NOFREE
+Constants:
+   0: None
+   1: 'Hello from tok!'
+Names:
+   0: print
+None
+[FrameInfo(frame=<frame at 0x109c5f2a0, file '/Users/carminedibiase/devel/secupy-core/tests/sources/run_app.py', line 29, code run>, filename='/Users/carminedibiase/devel/secupy-core/tests/sources/run_app.py', lineno=29, function='run', code_context=['    print(inspect.stack())\n'], index=0), FrameInfo(frame=<frame at 0x109bc9a40, file '/Users/carminedibiase/devel/secupy-core/tests/sources/run_app.py', line 39, code <module>>, filename='/Users/carminedibiase/devel/secupy-core/tests/sources/run_app.py', lineno=39, function='<module>', code_context=['    run()\n'], index=0)]
+print(__name__)
+
+def tok_say_hello():
+    print("Hello from tok!")
+
+foo Hello world! timestamp=1658580068.741754
+app main Hello world! timestamp=1658580068.741754
+__main__ 0.0.1
+
+
+### Secupy output ###
+> secupy -m run_app
+
+app 0.0.1
+app.bar
+app.bar.tok
+__name__ app.bar
+foo Hello world! timestamp=1658579975.236270
+hello from foo 1658579975.2362702
+bar Hello world! timestamp=1658579975.236839
+hello from bar None
+SecupyFinder(/Users/carminedibiase/devel/secupy-core/tests/__dist__/app/bar) bar False
+SecupyFinder(/Users/carminedibiase/devel/secupy-core/tests/__dist__/app/bar) __main__ False
+SecupyFinder(/Users/carminedibiase/devel/secupy-core/tests/__dist__/app/bar) __init__ False
+SecupyFinder(/Users/carminedibiase/devel/secupy-core/tests/__dist__/app/bar) tok True
+__main__ 0.0.1
+Hello from tok!
+Name:              tok_say_hello
+Filename:          /Users/carminedibiase/devel/secupy-core/tests/__dist__/app/bar/tok/__init__.py
+Argument count:    0
+Positional-only arguments: 0
+Kw-only arguments: 0
+Number of locals:  0
+Stack size:        2
+Flags:             OPTIMIZED, NEWLOCALS, NOFREE
+Constants:
+   0: None
+   1: 'Hello from tok!'
+Names:
+   0: print
+None
+[FrameInfo(frame=<frame at 0x10df3f0b0, file '/Users/carminedibiase/devel/secupy-core/tests/__dist__/run_app.py', line 29, code run>, filename='/Users/carminedibiase/devel/secupy-core/tests/__dist__/run_app.py', lineno=29, function='run', code_context=None, index=None), FrameInfo(frame=<frame at 0x10e280950, file '/Users/carminedibiase/devel/secupy-core/tests/__dist__/run_app.py', line 39, code <module>>, filename='/Users/carminedibiase/devel/secupy-core/tests/__dist__/run_app.py', lineno=39, function='<module>', code_context=None, index=None), FrameInfo(frame=<frame at 0x7fda4bf90fb0, file '<string>', line 86, code _run_code>, filename='<string>', lineno=86, function='_run_code', code_context=None, index=None), FrameInfo(frame=<frame at 0x10dbaf640, file '<string>', line 196, code _run_module_as_main>, filename='<string>', lineno=196, function='_run_module_as_main', code_context=None, index=None), FrameInfo(frame=<frame at 0x10e25ca00, file '<string>', line 16, code main>, filename='<string>', lineno=16, function='main', code_context=None, index=None), FrameInfo(frame=<frame at 0x10dbaf840, file '<string>', line 12, code __call__>, filename='<string>', lineno=12, function='__call__', code_context=None, index=None), FrameInfo(frame=<frame at 0x7fda4bf89050, file '<string>', line 1936, code take_action>, filename='<string>', lineno=1936, function='take_action', code_context=None, index=None), FrameInfo(frame=<frame at 0x7fda4bf8b500, file '<string>', line 2008, code consume_optional>, filename='<string>', lineno=2008, function='consume_optional', code_context=None, index=None), FrameInfo(frame=<frame at 0x7fda4bf8b220, file '<string>', line 2068, code _parse_known_args>, filename='<string>', lineno=2068, function='_parse_known_args', code_context=None, index=None), FrameInfo(frame=<frame at 0x10df3e320, file '<string>', line 1859, code parse_known_args>, filename='<string>', lineno=1859, function='parse_known_args', code_context=None, index=None), FrameInfo(frame=<frame at 0x10e2805b0, file '<string>', line 1826, code parse_args>, filename='<string>', lineno=1826, function='parse_args', code_context=None, index=None), FrameInfo(frame=<frame at 0x10dd42240, file '<string>', line 50, code main>, filename='<string>', lineno=50, function='main', code_context=None, index=None), FrameInfo(frame=<frame at 0x10dbada40, file '/Library/Frameworks/Python.framework/Versions/3.10/bin/secupy', line 33, code <module>>, filename='/Library/Frameworks/Python.framework/Versions/3.10/bin/secupy', lineno=33, function='<module>', code_context=["    sys.exit(load_entry_point('secupy==1.1.1', 'console_scripts', 'secupy')())\n"], index=0)]
+invalid or missing encoding declaration for '/Users/carminedibiase/devel/secupy-core/tests/__dist__/app/bar/tok/__init__.spy'
+foo Hello world! timestamp=1658579975.250194
+app main Hello world! timestamp=1658579975.250194
+__main__ 0.0.1
